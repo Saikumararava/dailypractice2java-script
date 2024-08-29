@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Arrow Functions questions</p>
+    <p>Global and Local Scope questions</p>
+    <p>clousures questions</p>
+    <p>pure functions questions</p>
+    <p>Call Stack questions</p>
+</body>
+<script>
+    //arrow functions questions
+    const multiplyByTwo = (num) => num * 2;
+    const isEven = number => number % 2 === 0;
+    console.log(multiplyByTwo(16));
+    console.log(isEven(16));
+
+    //global and local scope
+    let globalVar = 10;
+    function scopeTest() {
+        let localVar = 20;
+        console.log("inside scopeTest function:");
+        console.log("globalVar:", globalVar);
+        console.log("localVar:", localVar);
+    }
+    scopeTest();
+    console.log("outside scopetest function:");
+    console.log("globalVar:", globalVar);
+    console.log("localVar:", localVar);
+
+    //clousure question
+    function outerFunction() {
+        var outerVar = 5;
+        function innerFunction() {
+            return outerVar;
+        }
+        return innerFunction;
+    }
+    var clousure = outerFunction();
+    console.log(clousure());
+
+    //purefunctions question
+    function sum(a, b) {
+        return a + b;
+
+    }
+    function multiply(x, y) {
+        return x * y;
+
+    }
+    //call stack question
+    function functionA() {
+        functionB();
+    }
+
+    function functionB() {
+        functionC();
+    }
+
+    function functionC() {
+        console.log("In functionC");
+    }
+    functionA();
+
+</script>
+
+</html>
